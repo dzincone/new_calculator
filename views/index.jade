@@ -1,0 +1,42 @@
+extends layout
+
+block content
+  h1= title
+  #forms
+    form(action="", method="post")
+      label(for="departure") Departure
+      p
+      select#departure(name="departure")
+        option(value="New York") New York
+        option(value="Los Angeles") Los Angeles
+        option(value="Los Angeles") Chicago
+      p
+      label(for="arrival") Arrival
+      p
+      select#arrival(name="arrival")
+        option(value="New York") New York
+        option(value="Los Angeles") Los Angeles
+        option(value="Chicago") Chicago
+      p
+      label(for="baggie") Number of Checked Bags ($25/bag)
+      p
+      input#baggie(type="number", name="baggie")
+      p
+      label(for="seats") Class
+      p
+      select#seats(name="seat")
+        option(value="200") Business (+200)
+        option(value="500") First (+500)
+      p
+      input#wifi(type="checkbox", name="wifi")
+      label(for="wifi") Wifi ($12)
+      p
+      label(for="code") Discount Code
+      p
+      input#code(type="text", name="code")
+      p
+      button.submit_price(type="submit") Submit
+    div.total_cost
+      p.total Your price is: 
+        span.exact_amount $
+      
